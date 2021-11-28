@@ -1,0 +1,232 @@
+{
+    "window.titleBarStyle": "custom",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorStyle": "block",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "Q",
+                "Q" 
+            ],
+            "after": [ 
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "i"
+            ],
+            "after": [
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "h"
+            ],
+            "after": [
+                "i"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "I"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "5",
+                "j",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "I"
+            ],
+            "after": [
+                "5",
+                "k",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "4",
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "4",
+                "l"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "i"
+            ],
+            "after": [
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "h"
+            ],
+            "after": [
+                "i"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "I"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "5",
+                "j",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "I"
+            ],
+            "after": [
+                "5",
+                "k",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "4",
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "4",
+                "l"
+            ]
+        },
+        {
+            "before": [
+                "}"
+            ],
+            "after": [
+                "}",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before":[
+                "{"
+            ],
+            "after":[
+                "{",
+                "z",
+                "z"
+            ]
+        }
+
+    ],
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-c>": false,
+        "<C-w>": false
+    },
+    "editor.lineNumbers": "relative",
+    "vim.cursorStylePerMode.insert": "underline",
+    "vim.cursorStylePerMode.visual": "line-thin",
+    "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+    "markdown-preview-enhanced.enableCriticMarkupSyntax": true,
+    "markdown-preview-enhanced.codeBlockTheme": "vue.css",
+    "terminal.external.linuxExec": "alacritty",
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.iconTheme": "material-icon-theme",
+    "C_Cpp.updateChannel": "Insiders",
+    "powermode.enabled": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.fontFamily": "'Fira Code', 'Source Code Pro', Sarasa Term SC,  'Cascadia Code', '黑体'",
+    "search.searchOnType": false,
+    "editor.fontSize": 15,
+    "editor.find.addExtraSpaceOnTop": false,
+    "editor.fontLigatures": true,
+    "verilog.linting.linter": "verilator",
+    "verilog.ctags.path": "/usr/bin/ctags",
+    "verilog-formatter.istyle.style": "GNU",
+    "verilog-formatter.istyle.path": "/home/lixiaoqi/bin",
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "tabnine.experimentalAutoImports": true,
+    "explorer.confirmDragAndDrop": false,
+}
