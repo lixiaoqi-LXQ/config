@@ -52,7 +52,7 @@ noremap _ Nzz
 noremap ! :nohl<CR>
 noremap e :set paste<CR>
 noremap E :set nopaste<CR>
-noremap < a//
+noremap < I//
 noremap { {zz
 noremap } }zz
 
