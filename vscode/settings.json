@@ -6,9 +6,9 @@
         {
             "before": [
                 "Q",
-                "Q" 
+                "Q"
             ],
-            "after": [ 
+            "after": [
                 "<Esc>"
             ]
         }
@@ -96,6 +96,16 @@
         }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<"
+            ],
+            "after": [
+                "I",
+                "/",
+                "/"
+            ]
+        },
         {
             "before": [
                 "j"
@@ -187,16 +197,15 @@
             ]
         },
         {
-            "before":[
+            "before": [
                 "{"
             ],
-            "after":[
+            "after": [
                 "{",
                 "z",
                 "z"
             ]
         }
-
     ],
     "vim.handleKeys": {
         "<C-a>": false,
@@ -226,7 +235,14 @@
     "verilog.ctags.path": "/usr/bin/ctags",
     "verilog-formatter.istyle.style": "GNU",
     "verilog-formatter.istyle.path": "/home/lixiaoqi/bin",
-    "editor.defaultFormatter": "ms-vscode.cpptools",
     "tabnine.experimentalAutoImports": true,
     "explorer.confirmDragAndDrop": false,
+    "editor.formatOnSave": true,
+    "C_Cpp.formatting": "vcFormat",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "sameLine",
+    "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyFunction": true,
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "sameLine",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "sameLine",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine",
+    "C_Cpp.default.compilerPath": "",
 }

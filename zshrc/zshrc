@@ -28,7 +28,7 @@ VI_MODE_SET_CURSOR=true
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
 DISABLE_UPDATE_PROMPT="true"
-export UPDATE_ZSH_DAYS=2
+export UPDATE_ZSH_DAYS=7
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
