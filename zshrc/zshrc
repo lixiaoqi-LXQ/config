@@ -1,8 +1,7 @@
-alias 'pit'='pip install --target=/usr/lib/python3.9/site-packages'
-
 alias std='shutdown now'
 alias s=neofetch
 alias tree='tree -C'
+alias n=nvim
 alias cl=clear
 alias e=exit
 alias TEST='ping baidu.com'

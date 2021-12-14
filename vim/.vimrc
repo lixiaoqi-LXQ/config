@@ -2,6 +2,7 @@ set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 
 color peachpuff
 
+
 let mapleader = "\\"
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -75,6 +76,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" let g:airline_theme='behelit'
+let g:airline_theme='base16color'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
