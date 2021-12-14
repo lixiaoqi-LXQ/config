@@ -245,4 +245,7 @@
     "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "sameLine",
     "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine",
     "C_Cpp.default.compilerPath": "",
+    "C_Cpp.default.browse.path": [
+        "/usr/include/c++/11.1.0"
+    ]
 }
