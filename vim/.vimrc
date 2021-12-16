@@ -198,15 +198,13 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-  inoremap <silent><expr> <c-o> coc#refresh()
-  map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
-  map <LEADER>c2 :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_mirage<CR>
 
 if has('nvim')
-  set termguicolors     " enable true colors support
-endif
+  map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
+  map <LEADER>c2 :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_mirage<CR>
   let ayucolor="mirage" " for mirage version of theme
   " colorscheme snazzy
+  set termguicolors     " enable true colors support
   colorscheme ayu
   let g:SnazzyTransparent = 1
   " set background=dark
@@ -218,5 +216,7 @@ endif
     \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
     \     }
     \ }
-
-
+else
+  colorscheme desert
+  let g:airline_theme='base16color'
+endif
