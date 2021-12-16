@@ -198,21 +198,25 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
-map <LEADER>c2 :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_mirage<CR>
+  inoremap <silent><expr> <c-o> coc#refresh()
+  map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
+  map <LEADER>c2 :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_mirage<CR>
 
-set termguicolors     " enable true colors support
-let ayucolor="mirage" " for mirage version of theme
-" colorscheme snazzy
-colorscheme ayu
-let g:SnazzyTransparent = 1
-" set background=dark
-let g:airline_theme='ayu_mirage'
+if has('nvim')
+  set termguicolors     " enable true colors support
+endif
+  let ayucolor="mirage" " for mirage version of theme
+  " colorscheme snazzy
+  colorscheme ayu
+  let g:SnazzyTransparent = 1
+  " set background=dark
+  let g:airline_theme='ayu_mirage'
 
-let g:lightline = {
-  \     'active': {
-  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
-  \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
-  \     }
-  \ }
+  let g:lightline = {
+    \     'active': {
+    \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
+    \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+    \     }
+    \ }
+
 
