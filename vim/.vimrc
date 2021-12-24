@@ -92,7 +92,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-autoformat/vim-autoformat'
 let g:formatterpath = ['/usr/bin/']
 noremap <F3> :Autoformat<CR>
-au BufWrite * :Autoformat
+" au BufWrite * :Autoformat
 
 " ===
 " === fold code
