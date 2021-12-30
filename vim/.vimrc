@@ -42,32 +42,34 @@ noremap h i
 noremap i k
 noremap j h
 noremap k j
+noremap J 4h
+noremap L 4l
+noremap K 5jzz
+noremap I 5kzz
+noremap { {zz
+noremap } }zz
 noremap <C-j> <C-w>hzz
 noremap <C-k> <C-w>jzz
 noremap <C-i> <C-w>kzz
 noremap <C-l> <C-w>lzz
 noremap <C-o> <C-o>zz
 
-noremap J 4h
-noremap L 4l
-noremap K 5jzz
-noremap I 5kzz
+
+
 noremap n nzz
 noremap N Nzz
 noremap ! :nohl<CR>
-noremap e :set paste<CR>
-noremap E :set nopaste<CR>
-noremap < I//
-noremap { {zz
-noremap } }zz
 noremap b1 :b1<CR>
 noremap b2 :b2<CR>
 noremap b3 :b3<CR>
 noremap b4 :b4<CR>
 
-
 map Q :wq!<CR>
+map <C-a> ggVG
 map <C-s> :w<CR>
+map <C-c> "+y
+noremap e :set paste<CR>
+noremap E :set nopaste<CR>
 
 " ===
 " === auto update
