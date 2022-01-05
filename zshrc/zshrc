@@ -19,10 +19,25 @@ export ZSH="/home/lixiaoqi/.oh-my-zsh"
 
 ZSH_THEME="rkj-repos"
 
-#bindkey -v 
-#bindkey -M vicmd "a' vi-insert
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
+
+bindkey -v
+bindkey -M vicmd "h" vi-insert
+bindkey -M vicmd "H" vi-insert-bol
+bindkey -M vicmd "l" vi-forward-char
+bindkey -M vicmd "j" vi-backward-char
+bindkey -M vicmd "L" vi-forward-word
+bindkey -M vicmd "J" vi-backward-word
+
+bindkey -M vicmd "i" vi-beginning-of-line
+bindkey -M vicmd "k" vi-end-of-line
+
+bindkey -M vicmd "K" down-line-or-history
+bindkey -M vicmd "I" up-line-or-history
+
+bindkey -M viins "QQ" vi-cmd-mode
+
 
 
 # Uncomment the following line to use hyphen-insensitive completion.

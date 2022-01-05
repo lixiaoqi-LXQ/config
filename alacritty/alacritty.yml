@@ -100,9 +100,9 @@ font:
       #   - (macOS) Menlo
       #   - (Linux/BSD) monospace
       #   - (Windows) Consolas
-      #family: "Hack-Regular.ttf"
+      family: "Hack-Regular.ttf"
       #family: "Symbols Nerd Font"
-      family: devicon
+      # family: devicon
       #family: "Fira Code"
       # The `style` can be specified to pick a specific face.
       style: Regular
@@ -113,8 +113,8 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "Hack-Bold.ttf"
-    #family: "FiraCode-Bold"
+    family: "Hack-Regular.ttf"
+    # family: "Hack-Bold.ttf"
     # The `style` can be specified to pick a specific face.
     style: Bold
 
