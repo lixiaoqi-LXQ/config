@@ -90,6 +90,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('~/.vim/plugged')
 
 " ===
+" === python
+" ===
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
+
+" ===
 " === indentLine
 " ===
 Plug 'Yggdroot/indentLine'
@@ -146,6 +151,11 @@ nmap <C-q> <Plug>(wildfire-quick-select)
 " ===
 Plug 'tpope/vim-surround'
 
+" ===
+" === start animation
+" ===
+Plug 'mhinz/vim-startify'
+
 
 " ===
 " === not use nerdtree
@@ -165,7 +175,7 @@ Plug 'ayu-theme/ayu-vim'
 " === coc.nvim
 " ===
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-clangd', 'coc-marketplace', 'coc-pairs', 'coc-highlight']
+let g:coc_global_extensions = ['coc-json', 'coc-pyright', 'coc-clangd', 'coc-vimlsp', 'coc-marketplace', 'coc-pairs', 'coc-highlight']
 nmap <leader>rn <Plug>(coc-rename)
 " use <CR> to confirm completion and select the first completion
 " item and confirm the completion when no item has been selected
