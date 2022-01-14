@@ -36,6 +36,14 @@ set smartindent "C程序自动缩进
 "set guicursor=i:hor5-iCursor-blinkon0,v:ver10-vCursor
 "map <C-A> ggVGY
 
+
+
+
+inoremap <C-m> $$<left>
+inoremap <C-`> ``<left>
+inoremap <C-i> **<left>
+inoremap <C-b> ****<left><left>
+
 inoremap QQ <ESC>
 noremap H I
 noremap h i
@@ -77,13 +85,13 @@ noremap E :set nopaste<CR>
 " ===
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-            \| PlugInstall --sync | source $MYVIMRC
-            \| endif
+			\| PlugInstall --sync | source $MYVIMRC
+			\| endif
 
 
 " vim-plug
@@ -152,6 +160,25 @@ nmap <C-q> <Plug>(wildfire-quick-select)
 Plug 'tpope/vim-surround'
 
 " ===
+" === markdown format table
+" ===
+Plug 'dhruvasagar/vim-table-mode'
+function! s:isAtStartOfLine(mapping)
+	let text_before_cursor = getline('.')[0 : col('.')-1]
+	let mapping_pattern = '\V' . escape(a:mapping, '\')
+	let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
+	return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
+endfunction
+
+inoreabbrev <expr> <bar><bar>
+			\ <SID>isAtStartOfLine('\|\|') ?
+			\ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
+inoreabbrev <expr> __
+			\ <SID>isAtStartOfLine('__') ?
+			\ '<c-o>:silent! TableModeDisable<cr>' : '__'
+
+
+" ===
 " === start animation
 " ===
 Plug 'mhinz/vim-startify'
@@ -175,8 +202,9 @@ Plug 'ayu-theme/ayu-vim'
 " === coc.nvim
 " ===
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-json', 'coc-pyright', 'coc-clangd', 'coc-vimlsp', 'coc-marketplace', 'coc-pairs', 'coc-highlight']
+let g:coc_global_extensions = ['coc-json', 'coc-pyright', 'coc-clangd', 'coc-vimlsp', 'coc-webview', 'coc-marketplace', 'coc-pairs', 'coc-highlight']
 nmap <leader>rn <Plug>(coc-rename)
+
 " use <CR> to confirm completion and select the first completion
 " item and confirm the completion when no item has been selected
 " and format
@@ -186,13 +214,13 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 " use <tab> for trigger completion and navigate to the next complete item
 " and navigate the completion list:
 function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 inoremap <silent><expr> <Tab>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<Tab>" :
-            \ coc#refresh()
+			\ pumvisible() ? "\<C-n>" :
+			\ <SID>check_back_space() ? "\<Tab>" :
+			\ coc#refresh()
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Use `[g` and `]g` to navigate diagnostics
@@ -205,52 +233,23 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " Use <c-space> to trigger completion.
 if has('nvim')
-    inoremap <silent><expr> <c-o> coc#refresh()
+	inoremap <silent><expr> <c-o> coc#refresh()
 else
-    inoremap <silent><expr> <c-o> coc#refresh()
+	inoremap <silent><expr> <c-o> coc#refresh()
 endif
 " Use K to show documentation in preview window.
 nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
 function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    elseif (coc#rpc#ready())
-        call CocActionAsync('doHover')
-    else
-        execute '!' . &keywordprg . " " . expand('<cword>')
-    endif
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	elseif (coc#rpc#ready())
+		call CocActionAsync('doHover')
+	else
+		execute '!' . &keywordprg . " " . expand('<cword>')
+	endif
 endfunction
 " highlight
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" ===
-" === rainbow!
-" ===
-Plug 'luochen1990/rainbow'
-let g:rainbow_active = 0
-let g:rainbow_conf = {
-            \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-            \   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-            \   'operators': '_,_',
-            \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-            \   'separately': {
-                \       '*': {},
-                \       'tex': {
-                    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-                    \       },
-                    \       'lisp': {
-                        \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-                        \       },
-                        \       'vim': {
-                            \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-                            \       },
-                            \       'html': {
-                                \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-                                \       },
-                                \       'css': 0,
-                                \   }
-                                \}
-
 
 
 call plug#end()
@@ -261,28 +260,37 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
-    source /etc/vim/vimrc.local
+	source /etc/vim/vimrc.local
 endif
 
 
-if has('nvim')
-    map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
-    map <LEADER>c2 :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_mirage<CR>
-    let ayucolor="mirage" " for mirage version of theme
-    " colorscheme snazzy
-    set termguicolors     " enable true colors support
-    colorscheme ayu
-    let g:SnazzyTransparent = 1
-    " set background=dark
-    let g:airline_theme='ayu_mirage'
+" ===
+" === table of python
+" ===
+function! TitleInsert()
+	call setline(1,"#!/usr/bin/python")
+endfunction
+map <F2> :call TitleInsert()<CR>
 
-    let g:lightline = {
-                \     'active': {
-                    \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
-                    \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
-                    \     }
-                    \ }
+
+if has('nvim')
+	map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
+	map <LEADER>c2 :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_mirage<CR>
+	let ayucolor="mirage" " for mirage version of theme
+	" colorscheme snazzy
+	set termguicolors     " enable true colors support
+	colorscheme ayu
+	let g:SnazzyTransparent = 1
+	" set background=dark
+	let g:airline_theme='ayu_mirage'
+
+	let g:lightline = {
+				\     'active': {
+					\         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
+					\         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+					\     }
+					\ }
 else
-    colorscheme desert
-    let g:airline_theme='base16color'
+	colorscheme desert
+	let g:airline_theme='base16color'
 endif

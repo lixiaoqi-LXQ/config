@@ -219,7 +219,7 @@
     "markdown-preview-enhanced.enableCriticMarkupSyntax": true,
     "markdown-preview-enhanced.codeBlockTheme": "vue.css",
     "terminal.external.linuxExec": "alacritty",
-    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.colorTheme": "GitHub Light",
     "workbench.iconTheme": "material-icon-theme",
     "C_Cpp.updateChannel": "Insiders",
     "powermode.enabled": true,
