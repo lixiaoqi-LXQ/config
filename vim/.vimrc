@@ -183,6 +183,10 @@ inoreabbrev <expr> __
 " ===
 Plug 'mhinz/vim-startify'
 
+" ===
+" === drawit
+" ===
+Plug 'vim-scripts/DrawIt'
 
 " ===
 " === not use nerdtree
