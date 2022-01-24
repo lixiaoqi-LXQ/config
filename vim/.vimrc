@@ -39,6 +39,7 @@ set smartindent "C程序自动缩进
 
 
 
+noremap <C-m> Sif __name__ == '__main__':<CR>
 inoremap <C-m> $$<left>
 inoremap <C-`> ``<left>
 inoremap <C-i> **<left>
