@@ -30,7 +30,7 @@ exec_always compton
 exec --no-startup-id fcitx5 -d
 
 #Software
-bindsym $mod+w exec chromium
+bindsym $mod+w exec microsoft-edge-stable
 bindsym $mod+c exec code
 
 #QQ & WeChat
