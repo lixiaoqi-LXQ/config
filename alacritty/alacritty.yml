@@ -90,6 +90,7 @@ window:
   #history: 10000
   # Scrolling distance multiplier.
   #multiplier: 3
+  opacity: 0.8
 
 # Font configuration
 font:
@@ -101,9 +102,9 @@ font:
       #   - (Linux/BSD) monospace
       #   - (Windows) Consolas
       family: "Hack-Regular.ttf"
-      #family: "Symbols Nerd Font"
+      # family: "Symbols Nerd Font"
       # family: devicon
-      #family: "Fira Code"
+      # family: "Fira Code"
       # The `style` can be specified to pick a specific face.
       style: Regular
 
@@ -113,8 +114,8 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "Hack-Regular.ttf"
-    # family: "Hack-Bold.ttf"
+    family: "FiraCode"
+    # family: "Hack:style=Bold"
     # The `style` can be specified to pick a specific face.
     style: Bold
 
@@ -124,7 +125,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "Hack-Italic.ttf"
+    family: "Hack:style=Italic"
     #family: "Fira Code"
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -195,7 +196,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-window.opacity: 0.1
+# window.opacity: 0.1
 
 #selection:
 # This string contains all characters that are used as separators for

@@ -9,6 +9,14 @@ nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 syntax on
+
+set backup
+set patchmode=.bk
+set undofile
+set backupdir=~/Documents/vim_cache/backup
+set dir=~/Documents/vim_cache/swap
+set undodir=~/Documents/vim_cache/undos
+
 set rnu
 set wrap      "不会出框
 set showcmd     " Show (partial) command in status line.
@@ -57,6 +65,7 @@ noremap K 5jzz
 noremap I 5kzz
 noremap { {zz
 noremap } }zz
+noremap - 04x
 noremap = <C-a>
 noremap <C-j> <C-w>hzz
 noremap <C-k> <C-w>jzz
@@ -97,6 +106,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
+
+" ===
+" === backup
+" ===
+Plug 'vim-scripts/savevers.vim'
 
 " ===
 " === python
@@ -253,6 +267,7 @@ function! s:show_documentation()
 		execute '!' . &keywordprg . " " . expand('<cword>')
 	endif
 endfunction
+
 " highlight
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
