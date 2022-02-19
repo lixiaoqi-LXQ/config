@@ -13,9 +13,10 @@ syntax on
 set backup
 set patchmode=.bk
 set undofile
-set backupdir=~/Documents/vim_cache/backup
 set dir=~/Documents/vim_cache/swap
+set backupdir=~/Documents/vim_cache/backup
 set undodir=~/Documents/vim_cache/undos
+:let savevers_dirs = &backupdir
 
 set rnu
 set wrap      "不会出框
@@ -65,7 +66,8 @@ noremap K 5jzz
 noremap I 5kzz
 noremap { {zz
 noremap } }zz
-noremap - 04x
+noremap - I<BACKSPACE><ESC>
+noremap _ I<TAB><ESC>
 noremap = <C-a>
 noremap <C-j> <C-w>hzz
 noremap <C-k> <C-w>jzz
@@ -73,7 +75,7 @@ noremap <C-i> <C-w>kzz
 noremap <C-l> <C-w>lzz
 noremap <C-o> <C-o>zz
 
-
+                
 
 noremap n nzz
 noremap N Nzz
@@ -224,12 +226,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-json', 'coc-pyright', 'coc-clangd', 'coc-vimlsp', 'coc-webview', 'coc-marketplace', 'coc-pairs', 'coc-highlight']
 nmap <leader>rn <Plug>(coc-rename)
 
-" use <CR> to confirm completion and select the first completion
-" item and confirm the completion when no item has been selected
-" and format
+" use <CR> to confirm completion and select the first completion item 
+" and confirm the completion when no item has been selected and format
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " use <tab> for trigger completion and navigate to the next complete item
 " and navigate the completion list:
 function! s:check_back_space() abort
