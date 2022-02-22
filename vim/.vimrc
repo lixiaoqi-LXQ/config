@@ -85,7 +85,7 @@ noremap b2 :b2<CR>
 noremap b3 :b3<CR>
 noremap b4 :b4<CR>
 
-map Q :wq!<CR>
+map <F12> :wq!<CR>
 map <C-a> ggVG
 map <C-s> :w<CR>
 map <C-c> "+y

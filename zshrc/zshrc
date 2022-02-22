@@ -69,7 +69,7 @@ export LANG=en_US.UTF-8
     # if [ -f "/home/lixiaoqi/anaconda3/etc/profile.d/conda.sh" ]; then
         # . "/home/lixiaoqi/anaconda3/etc/profile.d/conda.sh"
     # else
-        # export PATH="/home/lixiaoqi/anaconda3/bin:$PATH"
+        # export path="/home/lixiaoqi/anaconda3/bin:$path"
     # fi
 # fi
 # unset __conda_setup
