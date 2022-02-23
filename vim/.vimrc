@@ -84,6 +84,11 @@ noremap b1 :b1<CR>
 noremap b2 :b2<CR>
 noremap b3 :b3<CR>
 noremap b4 :b4<CR>
+noremap b5 :b5<CR>
+noremap b6 :b6<CR>
+noremap b7 :b7<CR>
+noremap b8 :b8<CR>
+noremap b9 :b9<CR>
 
 map <F12> :wq!<CR>
 map <C-a> ggVG
@@ -108,6 +113,15 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
+
+" ===
+" === ranger 
+" ===
+Plug 'Lokaltog/neoranger'
+" for setting ranger viewmode values
+let g:neoranger_viewmode='miller' " supported values are ['multipane', 'miller']
+" for setting any extra option passed to ranger params
+let g:neoranger_opts='--cmd="set show_hidden true"' " this line makes ranger show hidden files by default
 
 " ===
 " === backup
