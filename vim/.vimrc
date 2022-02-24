@@ -122,6 +122,8 @@ Plug 'Lokaltog/neoranger'
 let g:neoranger_viewmode='miller' " supported values are ['multipane', 'miller']
 " for setting any extra option passed to ranger params
 let g:neoranger_opts='--cmd="set show_hidden true"' " this line makes ranger show hidden files by default
+" Open ranger in current working directory
+nnoremap <F11> :Ranger<CR>
 
 " ===
 " === backup
