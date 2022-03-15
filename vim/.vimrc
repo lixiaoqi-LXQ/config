@@ -1,8 +1,7 @@
-set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
-
+set nocompatible
+" set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 " colors desert
 " colors dracula
-
 
 let mapleader = "`"
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
@@ -77,7 +76,7 @@ noremap <C-i> <C-w>kzz
 noremap <C-l> <C-w>lzz
 noremap <C-o> <C-o>zz
 
-                
+
 
 noremap n nzz
 noremap N Nzz
@@ -104,20 +103,20 @@ noremap E :set nopaste<CR>
 " ===
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-			\| PlugInstall --sync | source $MYVIMRC
-			\| endif
+            \| PlugInstall --sync | source $MYVIMRC
+            \| endif
 
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
 " ===
-" === ranger 
+" === ranger
 " ===
 Plug 'Lokaltog/neoranger'
 " for setting ranger viewmode values
@@ -199,18 +198,18 @@ Plug 'tpope/vim-surround'
 " ===
 Plug 'dhruvasagar/vim-table-mode'
 function! s:isAtStartOfLine(mapping)
-	let text_before_cursor = getline('.')[0 : col('.')-1]
-	let mapping_pattern = '\V' . escape(a:mapping, '\')
-	let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
-	return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
+    let text_before_cursor = getline('.')[0 : col('.')-1]
+    let mapping_pattern = '\V' . escape(a:mapping, '\')
+    let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
+    return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
 endfunction
 
 inoreabbrev <expr> <bar><bar>
-			\ <SID>isAtStartOfLine('\|\|') ?
-			\ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
+            \ <SID>isAtStartOfLine('\|\|') ?
+            \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
 inoreabbrev <expr> __
-			\ <SID>isAtStartOfLine('__') ?
-			\ '<c-o>:silent! TableModeDisable<cr>' : '__'
+            \ <SID>isAtStartOfLine('__') ?
+            \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
 
 " ===
@@ -244,7 +243,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-json', 'coc-pyright', 'coc-clangd', 'coc-vimlsp', 'coc-webview', 'coc-marketplace', 'coc-pairs', 'coc-highlight']
 nmap <leader>rn <Plug>(coc-rename)
 
-" use <CR> to confirm completion and select the first completion item 
+" use <CR> to confirm completion and select the first completion item
 " and confirm the completion when no item has been selected and format
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
@@ -252,13 +251,13 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " use <tab> for trigger completion and navigate to the next complete item
 " and navigate the completion list:
 function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~ '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 inoremap <silent><expr> <Tab>
-			\ pumvisible() ? "\<C-n>" :
-			\ <SID>check_back_space() ? "\<Tab>" :
-			\ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<Tab>" :
+            \ coc#refresh()
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Use `[g` and `]g` to navigate diagnostics
@@ -271,20 +270,20 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " Use <c-space> to trigger completion.
 if has('nvim')
-	inoremap <silent><expr> <c-o> coc#refresh()
+    inoremap <silent><expr> <c-o> coc#refresh()
 else
-	inoremap <silent><expr> <c-o> coc#refresh()
+    inoremap <silent><expr> <c-o> coc#refresh()
 endif
 " Use K to show documentation in preview window.
 nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
 function! s:show_documentation()
-	if (index(['vim','help'], &filetype) >= 0)
-		execute 'h '.expand('<cword>')
-	elseif (coc#rpc#ready())
-		call CocActionAsync('doHover')
-	else
-		execute '!' . &keywordprg . " " . expand('<cword>')
-	endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
 endfunction
 
 " highlight
@@ -299,7 +298,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
-	source /etc/vim/vimrc.local
+    source /etc/vim/vimrc.local
 endif
 
 
@@ -307,29 +306,29 @@ endif
 " === table of python
 " ===
 function! TitleInsert()
-	call setline(1,"#!/usr/bin/python")
+    call setline(1,"#!/usr/bin/python")
 endfunction
 map <F2> :call TitleInsert()<CR>
 
 
 if has('nvim')
-	map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
-	map <LEADER>c2 :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_mirage<CR>
-	let ayucolor="mirage" " for mirage version of theme
-	" colorscheme snazzy
-	set termguicolors     " enable true colors support
-	colorscheme ayu
-	let g:SnazzyTransparent = 1
-	" set background=dark
-	let g:airline_theme='ayu_mirage'
+    map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
+    map <LEADER>c2 :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_mirage<CR>
+    let ayucolor="mirage" " for mirage version of theme
+    " colorscheme snazzy
+    set termguicolors     " enable true colors support
+    colorscheme ayu
+    let g:SnazzyTransparent = 1
+    " set background=dark
+    let g:airline_theme='ayu_mirage'
 
-	let g:lightline = {
-				\     'active': {
-					\         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
-					\         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
-					\     }
-					\ }
+    let g:lightline = {
+                \     'active': {
+                    \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
+                    \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+                    \     }
+                    \ }
 else
-	colorscheme desert
-	let g:airline_theme='base16color'
+    colorscheme desert
+    let g:airline_theme='base16color'
 endif

@@ -8,6 +8,8 @@ alias TEST='ping baidu.com'
 alias @=$HOME/tmp/ec
 alias git='LANG=en_GB git'
 alias ra=ranger
+alias venus="java -jar /home/lixiaoqi/Documents/计算机组成原理/CS61C/su20-lab-starter/tools/venus.jar"
+
 
 # thefuck
 eval $(thefuck --alias)

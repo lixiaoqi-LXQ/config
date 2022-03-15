@@ -1,0 +1,68 @@
+74c74
+<   set lang=zh_CN
+---
+>   set lang=en_US
+102,139d101
+< menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-simple-10007f96-e16b-4fb2-974c-faf4c479db1b' {
+< 	load_video
+< 	set gfxpayload=keep
+< 	insmod gzio
+< 	insmod part_gpt
+< 	insmod fat
+< 	search --no-floppy --fs-uuid --set=root 1719-3900
+< 	echo	'载入 Linux linux ...'
+< 	linux	/vmlinuz-linux root=UUID=10007f96-e16b-4fb2-974c-faf4c479db1b rw  loglevel=3 quiet
+< 	echo	'载入初始化内存盘...'
+< 	initrd	/intel-ucode.img /initramfs-linux.img
+< }
+< submenu 'Arch Linux 的高级选项' $menuentry_id_option 'gnulinux-advanced-10007f96-e16b-4fb2-974c-faf4c479db1b' {
+< 	menuentry 'Arch Linux，Linux linux' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-linux-advanced-10007f96-e16b-4fb2-974c-faf4c479db1b' {
+< 		load_video
+< 		set gfxpayload=keep
+< 		insmod gzio
+< 		insmod part_gpt
+< 		insmod fat
+< 		search --no-floppy --fs-uuid --set=root 1719-3900
+< 		echo	'载入 Linux linux ...'
+< 		linux	/vmlinuz-linux root=UUID=10007f96-e16b-4fb2-974c-faf4c479db1b rw  loglevel=3 quiet
+< 		echo	'载入初始化内存盘...'
+< 		initrd	/intel-ucode.img /initramfs-linux.img
+< 	}
+< 	menuentry 'Arch Linux, with Linux linux (fallback initramfs)' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-linux-fallback-10007f96-e16b-4fb2-974c-faf4c479db1b' {
+< 		load_video
+< 		set gfxpayload=keep
+< 		insmod gzio
+< 		insmod part_gpt
+< 		insmod fat
+< 		search --no-floppy --fs-uuid --set=root 1719-3900
+< 		echo	'载入 Linux linux ...'
+< 		linux	/vmlinuz-linux root=UUID=10007f96-e16b-4fb2-974c-faf4c479db1b rw  loglevel=3 quiet
+< 		echo	'载入初始化内存盘...'
+< 		initrd	/intel-ucode.img /initramfs-linux-fallback.img
+< 	}
+< }
+147,159d108
+< menuentry 'Windows Boot Manager (在 /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-92FF-D9CB' {
+< 	insmod part_gpt
+< 	insmod fat
+< 	search --no-floppy --fs-uuid --set=root 92FF-D9CB
+< 	chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+< }
+< 
+< #menuentry 'Windows Boot Manager (在 /dev/nvme1n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-F267-DBA7' {
+< #	insmod part_gpt
+< #	insmod fat
+< #	search --no-floppy --fs-uuid --set=root F267-DBA7
+< #	chainloader /efi/Microsoft/Boot/bootmgfw.efi
+< #}
+180a130,139
+> 
+> menuentry 'System shutdown' {
+> 	echo "shutting now."
+>     halt
+> }
+> 
+> menuentry 'System restart' {
+> 	echo "Rebooting now."
+>     reboot
+> }

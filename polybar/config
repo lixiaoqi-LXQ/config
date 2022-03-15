@@ -2,6 +2,7 @@
 #background = #882E3440
 background = #AA1F212E
 foreground = #ECEFF4
+grey = #AA111122
 
 black  = #000000
 white  = #ffffff
@@ -11,7 +12,7 @@ green  = #aaff77
 blue   = #7CE2FC
 
 [bar/test]
-background = ${colors.background}
+background = ${colors.grey}
 foreground = ${colors.foreground}
 ;border-bottom-color      = ${colors.red}
 width                    = 100%
