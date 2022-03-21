@@ -233,8 +233,20 @@ Plug 'preservim/nerdtree'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'connorholyday/vim-snazzy'
 Plug 'ayu-theme/ayu-vim'
+let g:dracula_bold = 1
+let g:dracula_italic = 1
+let g:dracula_underline = 1
+let g:dracula_undercurl = 1
+let g:dracula_colorterm = 1
+let g:dracula_inverse = 1
 
+autocmd ColorScheme dracula hi CursorLine cterm=underline term=underline
 
+" ===
+" === CursorHold
+" ===
+Plug 'antoinemadec/FixCursorHold.nvim'
+let g:cursorhold_updatetime = 100
 
 " ===
 " === coc.nvim
@@ -288,7 +300,8 @@ endfunction
 
 " highlight
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
+autocmd ColorScheme * highlight CocHighlightText ctermbg=LightGray ctermfg=Black guibg=#3F3F3F guifg=#FFB4F5
+" autocmd ColorScheme * highlight CocHighlightText guibg=#6A82B8
 
 call plug#end()
 
