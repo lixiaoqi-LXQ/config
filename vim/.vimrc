@@ -1,5 +1,5 @@
 set nocompatible
-" set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
+set fileencodings=utf-8,ucs-bom,utf-16,gbk,big5,gb18030,latin1
 " colors desert
 " colors dracula
 
