@@ -56,13 +56,16 @@ inoremap <C-i> **<left>
 inoremap <C-b> ****<left><left>
 
 inoremap QQ <ESC>
+noremap w W
 noremap H I
 noremap h i
 noremap i k
 noremap j h
 noremap k j
-noremap J 4h
-noremap L 4l
+" noremap J 4h
+" noremap L 4l
+noremap J B
+noremap L W
 noremap K 5jzz
 noremap I 5kzz
 noremap { {zz

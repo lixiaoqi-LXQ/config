@@ -12,7 +12,7 @@ AlignAfterOpenBracket: Align
 AlignArrayOfStructures: Right
 AlignConsecutiveAssignments: AcrossEmptyLinesAndComments
 AlignConsecutiveBitFields: AcrossEmptyLinesAndComments
-AlignConsecutiveDeclarations: AcrossEmptyLinesAndComments
+AlignConsecutiveDeclarations: Consecutive
 AlignConsecutiveMacros: AcrossEmptyLinesAndComments
 AlignEscapedNewlines: Left
 AlignOperands: Align
