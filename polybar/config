@@ -171,7 +171,7 @@ menu-0-1 = 
 menu-0-1-exec = variety
 ;menu-0-2 = 
 menu-0-2 = 
-menu-0-2-exec = Wechat
+menu-0-2-exec = WeChat
 
 menu-0-0-foreground = ${colors.foreground}
 menu-0-1-foreground = ${colors.blue}

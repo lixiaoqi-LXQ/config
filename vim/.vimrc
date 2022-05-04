@@ -8,6 +8,8 @@ nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 syntax on
+" make any txt file highlighted
+autocmd BufRead,BufNewFile *.txt set ft=help
 
 set backup
 set patchmode=.bk
@@ -49,7 +51,8 @@ set smartindent "C程序自动缩进
 
 noremap <leader>H ggO#include "kernel/types.h"<CR>#include "user/user.h"<CR>
 
-noremap <C-m> Sif __name__ == '__main__':<CR>
+noremap <TAB> zz
+noremap <CR> Sif __name__ == '__main__':<CR>
 inoremap <C-m> $$<left>
 inoremap <C-`> ``<left>
 inoremap <C-i> **<left>

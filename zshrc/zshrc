@@ -62,6 +62,7 @@ plugins=(zsh-interactive-cd zsh-autosuggestions git glassfish vi-mode emoji zsh-
 
 
 source $ZSH/oh-my-zsh.sh
+export GDM_LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # >>> conda initialize >>>
