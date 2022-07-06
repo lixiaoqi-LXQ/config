@@ -46,4 +46,5 @@ BraceWrapping:
     BeforeElse: false
     BeforeWhile: false
 IndentCaseLabels: true
+NamespaceIndentation: All
 SortIncludes: Never

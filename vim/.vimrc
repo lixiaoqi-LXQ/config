@@ -53,10 +53,6 @@ noremap <leader>H ggO#include "kernel/types.h"<CR>#include "user/user.h"<CR>
 
 noremap <TAB> zz
 noremap <CR> Sif __name__ == '__main__':<CR>
-inoremap <C-m> $$<left>
-inoremap <C-`> ``<left>
-inoremap <C-i> **<left>
-inoremap <C-b> ****<left><left>
 
 inoremap QQ <ESC>
 noremap w W
@@ -76,11 +72,27 @@ noremap } }zz
 noremap - I<BACKSPACE><ESC>
 noremap _ I<TAB><ESC>
 noremap = <C-a>
-noremap <C-j> <C-w>hzz
-noremap <C-k> <C-w>jzz
-noremap <C-i> <C-w>kzz
-noremap <C-l> <C-w>lzz
 noremap <C-o> <C-o>zz
+
+" Window cmd
+noremap <C-w>I <C-w>K
+noremap <C-w>K <C-w>J
+noremap <C-w>J <C-w>H
+noremap <C-w>L <C-w>L
+" moving cursor to orther window
+noremap <C-k> <C-w><Down>zz
+noremap <C-j> <C-w><Left>zz
+noremap <C-l> <C-w><Right>zz
+" This does not work: noremap <C-i> <C-w><Up>zz
+" window resizing
+noremap <C-w>, <C-w><
+noremap <C-w>. <C-w>>
+" moving around tab page
+if has('nvim')
+    map <C-Right> <C-PageDown>
+    map <C-Left> <C-PageUP>
+endif
+" noremap <C-Shift-Tab> <C-w>gt
 
 
 
@@ -97,7 +109,7 @@ noremap b7 :b7<CR>
 noremap b8 :b8<CR>
 noremap b9 :b9<CR>
 
-map <F12> :wq!<CR>
+map <F12> :wqall<CR>
 map <C-a> ggVG
 map <C-s> :w<CR>
 map <C-c> "+y
@@ -183,6 +195,7 @@ let g:NERDCommentEmptyLines = 1
 " ===
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1
 " let g:airline_theme='behelit'
 " let g:airline_theme='base16color'
 
