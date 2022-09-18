@@ -14,9 +14,9 @@ autocmd BufRead,BufNewFile *.txt set ft=help
 set backup
 set patchmode=.bk
 set undofile
-set dir=~/Documents/vim_cache/swap
-set backupdir=~/Documents/vim_cache/backup
-set undodir=~/Documents/vim_cache/undos
+set dir=~/tmp/vim_cache/swap
+set backupdir=~/tmp/vim_cache/backup
+set undodir=~/tmp/vim_cache/undos
 :let savevers_dirs = &backupdir
 
 set rnu
@@ -47,9 +47,6 @@ set smartindent "C程序自动缩进
 "map <C-A> ggVGY
 
 
-
-
-noremap <leader>H ggO#include "kernel/types.h"<CR>#include "user/user.h"<CR>
 
 noremap <TAB> zz
 noremap <CR> Sif __name__ == '__main__':<CR>
