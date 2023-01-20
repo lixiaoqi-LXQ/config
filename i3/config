@@ -38,7 +38,7 @@ bindsym $mod+c exec code
 
 # QQ & WeChat
 bindsym $mod1+w exec --no-startup-id WeChat
-bindsym $mod1+q exec --no-startup-id QQ
+bindsym $mod1+q exec --no-startup-id ~/bin/QQ
 
 # screen shot
 bindsym $mod+shift+s exec --no-startup-id flameshot gui

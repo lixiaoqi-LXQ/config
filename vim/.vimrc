@@ -142,6 +142,12 @@ let g:neoranger_opts='--cmd="set show_hidden true"' " this line makes ranger sho
 nnoremap <F11> :Ranger<CR>
 
 " ===
+" === arm highlight support
+" ===
+Plug 'ARM9/arm-syntax-vim'
+au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
+
+" ===
 " === backup
 " ===
 Plug 'vim-scripts/savevers.vim'
@@ -268,7 +274,7 @@ let g:cursorhold_updatetime = 100
 " === coc.nvim
 " ===
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-json', 'coc-pyright', 'coc-clangd', 'coc-vimlsp', 'coc-webview', 'coc-marketplace', 'coc-pairs', 'coc-highlight']
+let g:coc_global_extensions = ['coc-json', 'coc-pyright', 'coc-clangd', 'coc-vimlsp', 'coc-webview', 'coc-marketplace', 'coc-pairs', 'coc-highlight', 'coc-yaml']
 nmap <leader>rn <Plug>(coc-rename)
 
 " use <CR> to confirm completion and select the first completion item

@@ -222,7 +222,6 @@
     "workbench.colorTheme": "GitHub Light",
     "workbench.iconTheme": "material-icon-theme",
     "C_Cpp.updateChannel": "Insiders",
-    "powermode.enabled": true,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
@@ -246,6 +245,22 @@
     "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine",
     "C_Cpp.default.compilerPath": "",
     "C_Cpp.default.browse.path": [
-        "/usr/include/c++/11.1.0"
-    ]
+        "/usr/include/c++/11.1.0",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../x86_64-pc-linux-gnu/lib/x86_64-pc-linux-gnu/12.2.0/",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../x86_64-pc-linux-gnu/lib/../lib/",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/../../../x86_64-pc-linux-gnu/12.2.0/",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../lib/",
+        "/lib/x86_64-pc-linux-gnu/12.2.0/",
+        "/lib/../lib/",
+        "/usr/lib/x86_64-pc-linux-gnu/12.2.0/",
+        "/usr/lib/../lib/",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/../../../../x86_64-pc-linux-gnu/lib/",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/../../../",
+        "/lib/",
+        "/usr/lib/"
+    ],
+    "powermode.explosions.offset": 0,
+    "C_Cpp.codeAnalysis.clangTidy.headerFilter": "",
+    "window.zoomLevel": -1
 }
