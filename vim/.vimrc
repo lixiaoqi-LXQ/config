@@ -142,12 +142,6 @@ let g:neoranger_opts='--cmd="set show_hidden true"' " this line makes ranger sho
 nnoremap <F11> :Ranger<CR>
 
 " ===
-" === arm highlight support
-" ===
-Plug 'ARM9/arm-syntax-vim'
-au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
-
-" ===
 " === backup
 " ===
 Plug 'vim-scripts/savevers.vim'
@@ -204,7 +198,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 
 " ===
-" === selecte
+" === select
 " ===
 Plug 'gcmt/wildfire.vim'
 map <C-p> <Plug>(wildfire-fuel)
@@ -310,6 +304,8 @@ else
 endif
 " Use K to show documentation in preview window.
 nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
+" Use gs to switch between source and header
+noremap <silent> gs :CocCommand clangd.switchSourceHeader<CR>
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
         execute 'h '.expand('<cword>')
@@ -324,6 +320,10 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 autocmd ColorScheme * highlight CocHighlightText ctermbg=LightGray ctermfg=Black guibg=#3F3F3F guifg=#FFB4F5
 " autocmd ColorScheme * highlight CocHighlightText guibg=#6A82B8
+
+" auto fix
+nmap <leader>qf  <Plug>(coc-fix-current)
+
 
 call plug#end()
 
