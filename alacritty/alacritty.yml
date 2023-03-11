@@ -35,9 +35,8 @@ window:
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
   # position:
-    # x: 800
-    # y: 600
-
+  # x: 800
+  # y: 600
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
@@ -168,36 +167,35 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#0A0E14'
-    foreground: '#B3B1AD'
+    background: '0x1b182c'
+    foreground: '0xcbe3e7'
 
   # Normal colors
   normal:
-    black: '#01060E'
-    red: '#EA6C73'
-    green: '#91B362'
-    yellow: '#F9AF4F'
-    blue: '#53BDFA'
-    magenta: '#FAE994'
-    cyan: '#90E1C6'
-    white: '#C7C7C7'
+    black: '0x100e23'
+    red: '0xff8080'
+    green: '0x95ffa4'
+    yellow: '0xffe9aa'
+    blue: '0x91ddff'
+    magenta: '0xc991e1'
+    cyan: '0xaaffe4'
+    white: '0xcbe3e7'
 
   # Bright colors
   bright:
-    black: '#686868'
-    red: '#F07178'
-    green: '#C2D94C'
-    yellow: '#FFB454'
-    blue: '#59C2FF'
-    magenta: '#FFEE99'
-    cyan: '#95E6CB'
-    white: '#FFFFFF'
+    black: '0x565575'
+    red: '0xff5458'
+    green: '0x62d196'
+    yellow: '0xffb378'
+    blue: '0x65b2ff'
+    magenta: '0x906cff'
+    cyan: '0x63f2f1'
+    white: '0xa6b3cc'
 # Background opacity
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 # window.opacity: 0.1
-
 #selection:
 # This string contains all characters that are used as separators for
 # "semantic words" in Alacritty.

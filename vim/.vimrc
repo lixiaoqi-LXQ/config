@@ -193,7 +193,7 @@ let g:NERDCommentEmptyLines = 1
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme='behelit'
+let g:airline_theme='behelit'
 " let g:airline_theme='base16color'
 
 
@@ -246,6 +246,7 @@ Plug 'preservim/nerdtree'
 " ===
 " === theme
 " ===
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'connorholyday/vim-snazzy'
 Plug 'ayu-theme/ayu-vim'
@@ -347,8 +348,9 @@ map <F2> :call TitleInsert()<CR>
 
 
 if has('nvim')
-    map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
-    map <LEADER>c2 :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_mirage<CR>
+    map <F8> :set background=light<CR>:colorscheme PaperColor<CR>:AirlineTheme ayu_light<CR>
+    map <F9> :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
+    map <F10> :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_mirage<CR>
     let ayucolor="mirage" " for mirage version of theme
     " colorscheme snazzy
     set termguicolors     " enable true colors support
