@@ -81,8 +81,7 @@
                 "J"
             ],
             "after": [
-                "4",
-                "h"
+                "B"
             ]
         },
         {
@@ -90,8 +89,7 @@
                 "L"
             ],
             "after": [
-                "4",
-                "l"
+                "W"
             ]
         }
     ],
@@ -103,7 +101,9 @@
             "after": [
                 "I",
                 "/",
-                "/"
+                "/",
+                " ",
+                "<ESC>"
             ]
         },
         {
@@ -173,8 +173,7 @@
                 "J"
             ],
             "after": [
-                "4",
-                "h"
+                "B"
             ]
         },
         {
@@ -182,8 +181,7 @@
                 "L"
             ],
             "after": [
-                "4",
-                "l"
+                "W"
             ]
         },
         {
@@ -205,12 +203,44 @@
                 "z",
                 "z"
             ]
+        },
+        {
+            "before": [
+                "<TAB>"
+            ],
+            "after": [
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<space>"
+            ],
+            "after": [
+                "z",
+                "a"
+            ]
+        },
+        {
+            "before": [
+                "_"
+            ],
+            "after": [
+                "I",
+                " ",
+                " ",
+                " ",
+                " ",
+                "<ESC>"
+            ]
         }
     ],
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-c>": false,
-        "<C-w>": false
+        "<C-w>": false,
+        "<C-f>": false
     },
     "editor.lineNumbers": "relative",
     "vim.cursorStylePerMode.insert": "underline",
@@ -220,23 +250,12 @@
     "markdown-preview-enhanced.codeBlockTheme": "vue.css",
     "terminal.external.linuxExec": "alacritty",
     "workbench.colorTheme": "GitHub Light",
-    "workbench.iconTheme": "material-icon-theme",
-    "C_Cpp.updateChannel": "Insiders",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
-    },
     "editor.fontFamily": "'Fira Code', 'Source Code Pro', Sarasa Term SC,  'Cascadia Code', '黑体'",
     "search.searchOnType": false,
     "editor.fontSize": 15,
     "editor.find.addExtraSpaceOnTop": false,
     "editor.fontLigatures": true,
-    "verilog.linting.linter": "verilator",
-    "verilog.ctags.path": "/usr/bin/ctags",
-    "verilog-formatter.istyle.style": "GNU",
-    "verilog-formatter.istyle.path": "/home/lixiaoqi/bin",
-    "tabnine.experimentalAutoImports": true,
     "explorer.confirmDragAndDrop": false,
-    "editor.formatOnSave": true,
     "C_Cpp.formatting": "vcFormat",
     "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "sameLine",
     "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyFunction": true,
@@ -260,7 +279,13 @@
         "/lib/",
         "/usr/lib/"
     ],
-    "powermode.explosions.offset": 0,
     "C_Cpp.codeAnalysis.clangTidy.headerFilter": "",
-    "window.zoomLevel": -1
+    "[sql]": {
+        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+        // "editor.defaultFormatter": "sql
+    },
+    "sql-formatter.uppercase": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
 }

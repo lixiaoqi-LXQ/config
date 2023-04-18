@@ -244,6 +244,11 @@ Plug 'vim-scripts/DrawIt'
 Plug 'preservim/nerdtree'
 
 " ===
+" === go 
+" ===
+Plug 'josa42/coc-go'
+
+" ===
 " === theme
 " ===
 Plug 'NLKNguyen/papercolor-theme'
@@ -269,7 +274,7 @@ let g:cursorhold_updatetime = 100
 " === coc.nvim
 " ===
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-json', 'coc-pyright', 'coc-clangd', 'coc-vimlsp', 'coc-webview', 'coc-marketplace', 'coc-pairs', 'coc-highlight', 'coc-yaml']
+let g:coc_global_extensions = ['coc-json', 'coc-pyright', 'coc-clangd', 'coc-vimlsp', 'coc-webview', 'coc-marketplace', 'coc-pairs', 'coc-highlight', 'coc-yaml', 'coc-go']
 nmap <leader>rn <Plug>(coc-rename)
 
 " use <CR> to confirm completion and select the first completion item
