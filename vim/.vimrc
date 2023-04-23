@@ -9,7 +9,7 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 syntax on
 " make any txt file highlighted
-autocmd BufRead,BufNewFile *.txt set ft=help
+" autocmd BufRead,BufNewFile *.txt set ft=help
 
 set backup
 set patchmode=.bk

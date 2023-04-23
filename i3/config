@@ -24,30 +24,29 @@ exec --no-startup-id ntfd
 # for mouse wheel speed
 exec --no-startup-id imwheel
 
+# clash
+exec --no-startup-id $HOME/clash/clash -d $HOME/clash
 
-# VPN
-exec --no-startup-id vpn_state
+# dunst
+exec_always --no-startup-id dunst &
 
-exec_always variety
+exec variety
 exec_always compton
-exec --no-startup-id fcitx5 -d
+exec_always --no-startup-id fcitx5 -d
 
 # Software
 bindsym $mod+w exec microsoft-edge-stable
 bindsym $mod+c exec code
-bindsym $mod1+f exec --no-startup-id SigmaFileManager
-
-# QQ & WeChat
-bindsym $mod1+w exec --no-startup-id WeChat
-bindsym $mod1+q exec --no-startup-id ~/bin/QQ
-
+bindsym $mod1+f exec SigmaFileManager
+bindsym $mod1+q exec ~/bin/QQ
+bindsym $mod1+w exec WeChat
 # screen shot
 bindsym $mod+shift+s exec --no-startup-id flameshot gui
-
+bindsym $mod+Return exec alacritty
 # lock screen
-bindsym $mod+ctrl+l exec --no-startup-id i3lock-fancy
+bindsym $mod+ctrl+l exec --no-startup-id i3lock
 
-assign [class="WeChat"] $ws7
+# assign [class="WeChat"] $ws7
 # assign [class="QQ"] $ws7
 
 #############################################################################################
@@ -93,8 +92,6 @@ bindsym XF86AudioMute exec amixer set Master toggle
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -254,6 +251,6 @@ gaps inner 5
 gaps outer 4
 
 #QQ
-#for_window [instance="/opt/apps/com.qq.weixin.spark/files/run.sh"] floating enable
+for_window [instance="QQ"] floating enable
 #for_window [instance="QQ.exe"] border  none
 
